@@ -64,9 +64,7 @@ public class CoolWeatherDB {
 		}
 	}
 
-	/**
-	 * 从数据库读取某省下所有的城市信息。
-	 */
+	
 	public List<City> loadCities(int provinceId) {
 		List<City> list = new ArrayList<City>();
 		Cursor cursor = sqLiteDatabase.query("City", null, "province_id = ?",
@@ -86,9 +84,7 @@ public class CoolWeatherDB {
 		return list;
 	}
 
-	/**
-	 * 将County实例存储到数据库。
-	 */
+	
 	public void saveCounty(County county) {
 		if (county != null) {
 			ContentValues values = new ContentValues();
@@ -99,9 +95,7 @@ public class CoolWeatherDB {
 		}
 	}
 
-	/**
-	 * 从数据库读取某城市下所有的县信息。
-	 */
+	
 	public List<County> loadCounties(int cityId) {
 		List<County> list = new ArrayList<County>();
 		Cursor cursor = sqLiteDatabase.query("County", null, "city_id = ?",
